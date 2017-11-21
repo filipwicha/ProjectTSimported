@@ -8,7 +8,8 @@ namespace ProjectTS
 {
     class Program
     {
-        static ClientServer server = new ClientServer();
+        static Server server = new Server();
+        static Client client = new Client();
         
         static void Main(string[] args)
         {
@@ -18,8 +19,7 @@ namespace ProjectTS
             serverInfo = server.Listen();
             Console.WriteLine(serverInfo);
 
-            string datatosend = Console.ReadLine();
-            server.SendData(datatosend);
+            client.SendData(Convert.ToInt32(Console.ReadLine()));
 
             serverInfo = server.ReceiveData();
             Console.WriteLine(serverInfo);
