@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +19,16 @@ namespace ProjectTS
             serverInfo = server.Listen();
             Console.WriteLine(serverInfo);
 
-            client.SendData(Convert.ToInt32(Console.ReadLine()));
+            while(true)
+            {
+                client.SendData(Convert.ToInt32(Console.ReadLine()));
 
-            serverInfo = server.ReceiveData();
-            Console.WriteLine(serverInfo);
+                serverInfo = server.ReceiveData();
+                Console.WriteLine(serverInfo);
+            }
+            
 
-            Console.ReadLine();
+            Console.ReadKey();
             //exit 
         }
     }
