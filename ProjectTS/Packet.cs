@@ -32,7 +32,7 @@ namespace ProjectTS
                                           //z operacją dwuargumentową lub wieloargumentową o wartościach:  |
                                           //"00"-operacja dwuargumentowa,                                  |-czekam na odpowiedz Marka
                                           //"01"-operacja wieloargumentowa, ale nie ostatni pakiet,        | czy tak może być to zrobione
-                                          //"10"-operacja wieloargumentowa, ostatni pakiet.                /
+                                          //"10"-operacja wieloargumentowa, ostatni pakiet.                / 
 
         public Packet(int size)
         {
