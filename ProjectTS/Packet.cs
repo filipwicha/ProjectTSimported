@@ -22,6 +22,17 @@ namespace ProjectTS
         BitArray bitArr;
         int index = 0;
         int size;
+        
+        BitArray operation = new BitArray(3);
+        int number1;
+        int number2;
+        BitArray status = new BitArray(2);
+        BitArray id = new BitArray(8);
+        BitArray state = new BitArray(2); //odpowiada za informowanie serwera czy jest to pakiet           \
+                                          //z operacją dwuargumentową lub wieloargumentową o wartościach:  |
+                                          //"00"-operacja dwuargumentowa,                                  |-czekam na odpowiedz Marka
+                                          //"01"-operacja wieloargumentowa, ale nie ostatni pakiet,        | czy tak może być to zrobione
+                                          //"10"-operacja wieloargumentowa, ostatni pakiet.                /
 
         public Packet(int size)
         {
