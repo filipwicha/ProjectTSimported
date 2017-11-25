@@ -33,6 +33,49 @@ namespace ProjectTS
                                           //"00"-operacja dwuargumentowa,                                  |-czekam na odpowiedz Marka
                                           //"01"-operacja wieloargumentowa, ale nie ostatni pakiet,        | czy tak może być to zrobione
                                           //"10"-operacja wieloargumentowa, ostatni pakiet.                / 
+        void Serialize()
+        {
+            //serializowanie pola operation
+            foreach (bool b in operation)
+            {
+                bitArr.Set(index, b);
+                index++;
+            }
+
+            //serializowanie pola number1
+            this.Add(number1);
+
+            //serializowanie pola number2
+            {
+                BitArray temp = new BitArray(2, false); 
+                if (status == temp) //sprawdzam czy status oznacza operacje 2 argumentową
+                {
+                    this.Add(number2);
+                }
+            }
+
+            //serializowanie pola status
+            foreach (bool b in status)
+            {
+                bitArr.Set(index, b);
+                index++;
+            }
+
+            //serializowanie pola id
+            foreach (bool b in id)
+            {
+                bitArr.Set(index, b);
+                index++;
+            }
+
+            //serializowanie pola state
+            foreach (bool b in state)
+            {
+                bitArr.Set(index, b);
+                index++;
+            }
+        }
+
 
         void SetOperation(int num) //ustawianie operacji (3bit)
         {
